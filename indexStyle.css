@@ -1,0 +1,167 @@
+body {
+  margin:0px;
+  background-color:#ffe135;
+  overflow-x:hidden;
+}
+
+#title {
+  transition: top 1s ease-in 0.3s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform:translate(-50%, -50%);
+  -moz-webkit-transform:translate(-50%, -50%);
+  transform:translate(-50%, -50%);
+}
+
+#t {
+  stroke-dasharray: 1000;
+  stroke-dashoffset:1000;
+  animation: draw 3s ease-in forwards;
+}
+
+#carousel {
+  transition: transform 0.5s ease-out, opacity 2s ease-in;
+  position:absolute;
+  display:inline-flex;
+  flex-direction:row;
+  justify-content:center;
+  width:auto  ;
+  margin:0 auto;
+  height:auto;
+  bottom:25%;
+  opacity:0%;
+}
+
+.Text {
+  text-align:center;
+}
+
+.carouselDiv {
+  transition: transform 0.5s ease-out;
+}
+.carouselDiv:hover{
+  cursor:pointer;
+}
+.tooltiptext{
+  white-space:nowrap;
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  bottom:100%;
+  right:1%;
+  font-size:0.3em;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.bottomButtons:hover .tooltiptext{
+  visibility: visible;
+}
+#controlCarousel {
+  display:inline-flex;
+  flex-direction:row;
+  position:relative;
+  margin: 0 auto;
+  width:100%;
+  font-size:2em;
+  align-items:center;
+  justify-content:center;
+  top:90vh;
+  color:purple;
+  transition: opacity 2s;
+  opacity:0%;
+}
+#contact, #socials{
+transition:background-color 0.3s, color 0.3s,transform 0.3s;
+}
+#contact:hover{
+  transform:scale(120%);
+  transition:background-color 0.3s, color 0.3s,transform 0.3s;
+  background-color:#ffe135;
+  color:purple;
+  cursor:pointer;
+}
+#socials:hover {
+  transform:scale(120%);
+  transition:background-color 0.3s, color 0.3s,transform 0.3s;
+  background-color:#ffe135;
+  color:purple;
+  cursor:pointer;
+}
+.controlButtons {
+  transition:transform 0.3s;
+}
+.controlButtons:hover {
+  transform:scale(120%);
+  transition:transform 0.3s;
+}
+@keyframes draw {
+  to{
+    stroke-dashoffset:0;
+  }
+}
+
+#cjha {
+  font-size:2em;
+  opacity:0%;
+  animation:spin 1s infinite linear 0.5s, fade 1s linear forwards 1s;
+}
+
+#bottomIcons {
+  position:absolute;
+  bottom:2%;
+  right:2%;
+  margin-right:2%;
+  display:flex;
+  flex-direction:row;
+  font-size:2em;
+  opacity:0%;
+  align-items:center;
+  justify-content:center;
+  transition:opacity 2s;
+}
+
+#socials {
+  border-radius:25%;
+  background-color:purple;
+  padding:10%;
+  color:#ffe135;
+  margin:5%;
+}
+
+#contact {
+  margin:5%;
+  border-radius:25%;
+  background-color:purple;
+  padding:10%;
+  color:#ffe135;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  from{
+    opacity:0%
+  }
+  to {
+    opacity:100%;
+  }
+}
